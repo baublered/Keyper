@@ -1,74 +1,50 @@
 Project Overview
 This project is a password manager built using the MEVN (MongoDB, Express, Vue, Node.js) stack. However, we do not use a database for storage, and the app relies on AES and RSA encryption algorithms to securely encrypt and decrypt passwords. The user can select between AES or RSA to encrypt passwords and view the encrypted and decrypted results, as well as performance metrics for each algorithm. Additionally, the app features password strength checking, password generation, and a password reveal option.
 
-Features
-AES and RSA Encryption:
-
-Encrypt and decrypt passwords using the AES and RSA algorithms.
-
-Display encryption and decryption performance times (in milliseconds).
-
-Password Strength Checker:
-
-Checks the strength of the entered password (Weak, Moderate, Strong).
-
-Password Generator:
-
-Automatically generates a strong password with random characters.
-
-Password Reveal Option:
-
-Toggle to show or hide the password (eye icon to toggle visibility).
-
-Clear All Button:
-
-Clear all inputs and outputs.
+```
+Features: 
+    AES and RSA Encryption:
+    - Encrypt and decrypt passwords using the AES and RSA algorithms.
+    - Display encryption and decryption performance times (in milliseconds).
+    Password Strength Checker:
+    - Checks the strength of the entered password (Weak, Moderate, Strong).
+    Password Generator:
+    - Automatically generates a strong password with random characters.
+    Password Reveal Option:
+    - Toggle to show or hide the password (eye icon to toggle visibility).
+    Clear All Button:
+    - Clear all inputs and outputs.
+```
 
 Tech Stack
 Frontend:
-
-Vue.js (for the UI)
-
-Vite (for development server)
-
-Axios (for making HTTP requests)
-
+    Vue.js (for the UI)
+    Vite (for development server)
+    Axios (for making HTTP requests)
 Backend:
-
-Node.js (for the server)
-
-Express.js (for creating API routes)
-
-crypto (for AES and RSA encryption)
+    Node.js (for the server)
+    Express.js (for creating API routes)
+    crypto (for AES and RSA encryption)
 
 Project Structure
 Frontend (src/):
-App.vue: Main component for handling UI and logic for password encryption, decryption, password generation, strength checking, etc.
-
-style: Scoped styling for the app.
-
-dependencies: Vue.js, Axios for API communication.
-
+    App.vue: Main component for handling UI and logic for password encryption, decryption, password generation, strength checking, etc.
+    style: Scoped styling for the app.
+    dependencies: Vue.js, Axios for API communication.
 Backend (server.js):
-Express API: Handles encryption and decryption requests.
-
-/encrypt: Endpoint to encrypt a password using the selected method (AES or RSA).
-
-/decrypt: Endpoint to decrypt the encrypted password using the provided method and key.
+    Express API: Handles encryption and decryption requests.
+    /encrypt: Endpoint to encrypt a password using the selected method (AES or RSA).
+    /decrypt: Endpoint to decrypt the encrypted password using the provided method and key.
 
 Encryption Algorithms:
-AES Encryption:
+    AES Encryption:
+        128-bit key length.
+        Uses crypto module to implement AES encryption.
+    RSA Encryption:
+        Uses a 2048-bit RSA public/private key pair.
+        crypto module is used for RSA encryption/decryption.
 
-128-bit key length.
-
-Uses crypto module to implement AES encryption.
-
-RSA Encryption:
-
-Uses a 2048-bit RSA public/private key pair.
-
-crypto module is used for RSA encryption/decryption.
-
+```
 How to Run
 1. Install Backend Dependencies:
 Navigate to the backend directory and run:
@@ -135,21 +111,16 @@ The user can toggle between showing and hiding the password with an eye icon.
 Clear All:
 
 A "Clear" button allows users to clear all fields, including the password input, encrypted output, and decrypted output.
+```
 
-Future Improvements
-Implement local storage for saving passwords (instead of relying on the session).
+Future Improvements:
+    Implement local storage for saving passwords (instead of relying on the session).
+    Add user authentication for better security.
+    Store encrypted passwords using RSA or AES in a database.
+    Implement multi-factor authentication (MFA).
+    Add more encryption algorithms for variety.
 
-Add user authentication for better security.
-
-Store encrypted passwords using RSA or AES in a database.
-
-Implement multi-factor authentication (MFA).
-
-Add more encryption algorithms for variety.
-
-Credits
-This project uses crypto for encryption and decryption.
-
-Vue.js for frontend development.
-
-Express.js for backend development
+Credits:
+    This project uses crypto for encryption and decryption.
+    Vue.js for frontend development.
+    Express.js for backend development
